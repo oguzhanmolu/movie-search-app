@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-type ImageProps = { src: string; alt: string; height: string; width: string };
+type ImageProps = {
+  src: string;
+  alt: string;
+  height: string;
+  width: string;
+};
 
 const Image: React.FC<ImageProps> = ({ src, alt, height, width }) => {
   return <ImageItem src={src} alt={alt} height={height} width={width} />;

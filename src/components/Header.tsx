@@ -23,6 +23,11 @@ const Header = () => {
 
 const HeaderWrapper = styled.section`
   padding: 10px;
+
+  @media (max-width: 400px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const IconWrapper = styled.div`
