@@ -13,7 +13,7 @@ const Header = () => {
           fontSize='2rem'
           fontFamily='Limelight'
           fontWeight='normal'
-          color='#B24BF3'
+          color='#A020F0'
           text='MovieDb'
         />
       </IconWrapper>
