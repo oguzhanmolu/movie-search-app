@@ -40,6 +40,10 @@ const TextItem = styled.p<TextProps>`
   font-family: ${(props) => props.fontFamily};
   font-weight: ${(props) => props.fontWeight};
   color: ${(props) => props.color};
+
+  @media (max-width: 400px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export default Text;

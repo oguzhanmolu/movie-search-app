@@ -14,6 +14,7 @@ const Image: React.FC<ImageProps> = ({ src, alt, height, width }) => {
 const ImageItem = styled.img<ImageProps>`
   height: ${(props) => props.height};
   width: ${(props) => props.width};
+  border-radius: 10px;
 `;
 
 export default Image;

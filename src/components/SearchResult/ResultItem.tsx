@@ -10,7 +10,7 @@ interface ResultItemProps {
     Year: string;
   };
   id: string;
-  onClickAction: (e: any) => void;
+  onClickAction: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 // Search result item
@@ -39,7 +39,7 @@ const ItemWrapper = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(230, 230, 230);
   }
 `;
 

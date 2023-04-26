@@ -1,14 +1,17 @@
 import styled from 'styled-components';
-import ResultList from './SearchResult/ResultList';
 import { useEffect, useState } from 'react';
+import ResultList from './SearchResult/ResultList';
+import MovieItem from './MovieItem';
 
 export interface MovieData {
-  Search: {
-    imdbID: string;
-    Poster: string;
-    Title: string;
-    Year: string;
-  }[];
+  imdbID: string;
+  Poster: string;
+  Title: string;
+  Year: string;
+}
+
+export interface MovieAPIDataProps {
+  Search: MovieData[];
 }
 
 const API_KEY = 'e55d364b';
@@ -16,7 +19,16 @@ const API_KEY = 'e55d364b';
 const Main = () => {
   // Hooks
   const [searchValue, setSearchValue] = useState<string>('');
-  const [movieAPIData, setMovieAPIData] = useState<MovieData | null>(null);
+  const [selectedMovie, setSelectedMovie] = useState<any>();
+  const [movieAPIData, setMovieAPIData] = useState<MovieAPIDataProps | null>(
+    null
+  );
+
+  // Handle input change
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+    setSelectedMovie('');
+  };
 
   // Fetch movie data whenever input values changes
   useEffect(() => {
@@ -24,7 +36,7 @@ const Main = () => {
       try {
         const endpoint = `http://www.omdbapi.com/?s=${searchValue}&apikey=${API_KEY}`;
         const response = await fetch(endpoint);
-        const data = (await response.json()) as MovieData;
+        const data = (await response.json()) as MovieAPIDataProps;
         setMovieAPIData(data);
       } catch (error) {
         console.error(error);
@@ -37,12 +49,19 @@ const Main = () => {
   return (
     <MainWrapper>
       <Input
-        onChange={(e) => setSearchValue(e.target.value)}
+        onChange={(e) => handleInputChange(e)}
         value={searchValue}
         type='text'
         placeholder='Type Movie Title ...'
       />
-      <ResultList movieData={movieAPIData} />
+
+      <MovieItem selectedMovie={selectedMovie} />
+
+      <ResultList
+        movieData={movieAPIData}
+        setSearchValue={setSearchValue}
+        setSelectedMovie={setSelectedMovie}
+      />
     </MainWrapper>
   );
 };
