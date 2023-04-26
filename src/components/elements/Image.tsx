@@ -4,7 +4,7 @@ type ImageProps = {
   src: string;
   alt: string;
   height: string;
-  width: string;
+  width?: string;
 };
 
 const Image: React.FC<ImageProps> = ({ src, alt, height, width }) => {
@@ -16,5 +16,9 @@ const ImageItem = styled.img<ImageProps>`
   width: ${(props) => props.width};
   border-radius: 10px;
 `;
+
+Image.defaultProps = {
+  width: 'auto',
+};
 
 export default Image;

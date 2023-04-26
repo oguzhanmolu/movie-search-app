@@ -8,15 +8,13 @@ interface ResultListProps {
   setSelectedMovie: React.Dispatch<React.SetStateAction<MovieData | undefined>>;
 }
 
-// Search result list below search bar
 const ResultList = ({
   movieData,
   setSearchValue,
   setSelectedMovie,
 }: ResultListProps) => {
   // Highlight clicked movie
-  const handleOnClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Find selected movie
+  const handleSelectedMovie = (e: React.MouseEvent<HTMLDivElement>) => {
     const selectedMovie = movieData?.Search.find(
       (movie) => movie.imdbID === e.currentTarget.id
     );
@@ -26,13 +24,14 @@ const ResultList = ({
     setSearchValue('');
   };
 
+  // List search bar results
   const movieItems = movieData?.Search?.map((movie) => {
     return (
       <ResultItem
         key={movie.imdbID}
         id={movie.imdbID}
         movieData={movie}
-        onClickAction={handleOnClick}
+        onClickAction={handleSelectedMovie}
       />
     );
   });
@@ -42,15 +41,10 @@ const ResultList = ({
 
 const ResultWrapper = styled.div`
   height: 60vh;
-  width: auto;
   min-width: 30vw;
   margin-top: 10px;
   padding: 0 25px 0 25px;
   overflow-y: auto;
-
-  @media (max-width: 400px) {
-    height: auto;
-  }
 `;
 
 export default ResultList;

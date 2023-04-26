@@ -37,7 +37,6 @@ const ItemWrapper = styled.div`
   position: fixed;
   margin-top: 75px;
   text-align: center;
-  z-index: 2;
 `;
 
 const Link = styled.a`

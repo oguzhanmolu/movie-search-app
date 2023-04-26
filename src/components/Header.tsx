@@ -8,21 +8,22 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <IconWrapper>
-        <Image src={headerIcon} alt='Movie icon' height='50px' width='50px' />
-        <Text
-          fontSize='2rem'
-          fontFamily='Limelight'
-          fontWeight='normal'
-          color='#A020F0'
-          text='MovieDb'
-        />
+        <Image src={headerIcon} alt='Movie icon' height='50px' />
+
+        <Text fontSize='2rem' color='#A020F0' text='MovieDb' />
       </IconWrapper>
     </HeaderWrapper>
   );
 };
 
 const HeaderWrapper = styled.section`
+  display: flex;
   padding: 10px;
+
+  @media (max-width: 400px) {
+    justify-content: center;
+    margin-bottom: 25px;
+  }
 `;
 
 const IconWrapper = styled.div`

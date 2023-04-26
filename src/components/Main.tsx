@@ -77,7 +77,7 @@ const MainWrapper = styled.section`
 const Input = styled.input`
   padding: 5px;
   border-style: none;
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid black;
   font-size: 1.5rem;
   text-align: center;
 
