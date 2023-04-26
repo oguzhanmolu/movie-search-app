@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 type TextProps = {
-  fontSize: string;
-  fontFamily: string;
-  fontWeight: string;
-  color: string;
+  fontSize?: string;
+  fontFamily?: string;
+  fontWeight?: string;
+  color?: string;
   text: string;
 };
 
@@ -26,6 +26,13 @@ const Text: React.FC<TextProps> = ({
       {text}
     </TextItem>
   );
+};
+
+Text.defaultProps = {
+  fontSize: '1rem',
+  fontFamily: 'Limelight',
+  fontWeight: 'normal',
+  color: 'black',
 };
 
 const TextItem = styled.p<TextProps>`

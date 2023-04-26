@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import ResultList from './SearchResult/ResultList';
 import { useEffect, useState } from 'react';
 
-interface MovieData {
+export interface MovieData {
   Search: {
     imdbID: string;
     Poster: string;
@@ -16,7 +16,7 @@ const API_KEY = 'e55d364b';
 const Main = () => {
   // Hooks
   const [searchValue, setSearchValue] = useState<string>('');
-  const [movieData, setMovieData] = useState<MovieData | null>(null);
+  const [movieAPIData, setMovieAPIData] = useState<MovieData | null>(null);
 
   // Fetch movie data whenever input values changes
   useEffect(() => {
@@ -25,7 +25,7 @@ const Main = () => {
         const endpoint = `http://www.omdbapi.com/?s=${searchValue}&apikey=${API_KEY}`;
         const response = await fetch(endpoint);
         const data = (await response.json()) as MovieData;
-        setMovieData(data);
+        setMovieAPIData(data);
       } catch (error) {
         console.error(error);
       }
@@ -42,11 +42,12 @@ const Main = () => {
         type='text'
         placeholder='Type Movie Title ...'
       />
-      <ResultList />
+      <ResultList movieData={movieAPIData} />
     </MainWrapper>
   );
 };
 
+// Styles
 const MainWrapper = styled.section`
   display: flex;
   flex-direction: column;
