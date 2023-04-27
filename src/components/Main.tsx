@@ -34,7 +34,7 @@ const Main = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const endpoint = `http://www.omdbapi.com/?s=${searchValue}&apikey=${API_KEY}`;
+        const endpoint = `https://www.omdbapi.com/?s=${searchValue}&apikey=${API_KEY}`;
         const response = await fetch(endpoint);
         const data = (await response.json()) as MovieAPIDataProps;
         setMovieAPIData(data);

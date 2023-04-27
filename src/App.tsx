@@ -32,7 +32,7 @@ const BackgroundImage = styled.div`
   z-index: -1;
   background-image: url(${mainBackgroundImage});
   background-repeat: repeat-x;
-  background-size: contain;
+  background-size: cover;
 
   @media (max-width: 400px) {
     background-image: none;
