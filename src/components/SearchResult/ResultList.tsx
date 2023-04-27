@@ -13,18 +13,17 @@ const ResultList = ({
   setSearchValue,
   setSelectedMovie,
 }: ResultListProps) => {
-  // Highlight clicked movie
+  // Handle select movie and show it
   const handleSelectedMovie = (e: React.MouseEvent<HTMLDivElement>) => {
     const selectedMovie = movieData?.Search.find(
       (movie) => movie.imdbID === e.currentTarget.id
     );
 
-    // Set values
     setSelectedMovie(selectedMovie);
     setSearchValue('');
   };
 
-  // List search bar results
+  // List search results
   const movieItems = movieData?.Search?.map((movie) => {
     return (
       <ResultItem

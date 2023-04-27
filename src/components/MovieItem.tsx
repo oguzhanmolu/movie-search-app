@@ -31,11 +31,11 @@ const MovieItem = ({ selectedMovie }: SelectedMovieProps) => {
 
 const ItemWrapper = styled.div`
   display: flex;
+  position: fixed;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  position: fixed;
   margin-top: 75px;
+  gap: 10px;
   text-align: center;
 `;
 

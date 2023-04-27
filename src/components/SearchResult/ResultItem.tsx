@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 import Image from '../elements/Image';
 import Text from '../elements/Text';
-
+import { MovieData } from '../Main';
 interface ResultItemProps {
-  movieData: {
-    imdbID: string;
-    Poster: string;
-    Title: string;
-    Year: string;
-  };
+  movieData: MovieData;
   id: string;
   onClickAction: (e: React.MouseEvent<HTMLDivElement>) => void;
 }

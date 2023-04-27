@@ -19,7 +19,7 @@ const API_KEY = 'e55d364b';
 const Main = () => {
   // Hooks
   const [searchValue, setSearchValue] = useState<string>('');
-  const [selectedMovie, setSelectedMovie] = useState<any>();
+  const [selectedMovie, setSelectedMovie] = useState<MovieData | undefined>();
   const [movieAPIData, setMovieAPIData] = useState<MovieAPIDataProps | null>(
     null
   );
@@ -27,7 +27,7 @@ const Main = () => {
   // Handle input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
-    setSelectedMovie('');
+    setSelectedMovie(undefined);
   };
 
   // Fetch movie data whenever input values changes
