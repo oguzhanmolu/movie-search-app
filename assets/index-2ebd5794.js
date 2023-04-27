@@ -110,7 +110,7 @@ Error generating stack: `+o.message+`
   &:hover {
     scale: 1.05;
   }
-`,Hm="e55d364b",Qm=()=>{const[e,t]=$e.useState(""),[n,r]=$e.useState(),[l,o]=$e.useState(null),i=u=>{t(u.target.value),r("")};return $e.useEffect(()=>{(async()=>{try{const s=`http://www.omdbapi.com/?s=${e}&apikey=${Hm}`,m=await(await fetch(s)).json();o(m)}catch(s){console.error(s)}})()},[e]),B.jsxs(Ym,{children:[B.jsx(Gm,{onChange:u=>i(u),value:e,type:"text",placeholder:"Type Movie Title ..."}),B.jsx(Bm,{selectedMovie:n}),B.jsx(Fm,{movieData:l,setSearchValue:t,setSelectedMovie:r})]})},Ym=je.section`
+`,Hm="e55d364b",Qm=()=>{const[e,t]=$e.useState(""),[n,r]=$e.useState(),[l,o]=$e.useState(null),i=u=>{t(u.target.value),r("")};return $e.useEffect(()=>{(async()=>{try{const s=`https://www.omdbapi.com/?s=${e}&apikey=${Hm}`,m=await(await fetch(s)).json();o(m)}catch(s){console.error(s)}})()},[e]),B.jsxs(Ym,{children:[B.jsx(Gm,{onChange:u=>i(u),value:e,type:"text",placeholder:"Type Movie Title ..."}),B.jsx(Bm,{selectedMovie:n}),B.jsx(Fm,{movieData:l,setSearchValue:t,setSelectedMovie:r})]})},Ym=je.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -152,7 +152,7 @@ Error generating stack: `+o.message+`
   z-index: -1;
   background-image: url(${Jm});
   background-repeat: repeat-x;
-  background-size: contain;
+  background-size: cover;
 
   @media (max-width: 400px) {
     background-image: none;
