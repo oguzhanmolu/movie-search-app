@@ -98,11 +98,11 @@ Error generating stack: `+o.message+`
   overflow-y: auto;
 `,Bm=({selectedMovie:e})=>{const{Title:t="",Year:n="",imdbID:r="",Poster:l=""}=e??{};return B.jsxs(Vm,{children:[B.jsx(Bn,{fontSize:"2.75rem",fontWeight:"bold",text:t}),B.jsx(Bn,{fontSize:"2.25rem",color:"#A020F0",fontWeight:"bold",text:n}),B.jsx(Wm,{target:"_blank",href:`https://www.imdb.com/title/${r}/`,children:B.jsx(To,{src:l,alt:t,height:"500px",width:"auto"})})]})},Vm=je.div`
   display: flex;
+  position: fixed;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  position: fixed;
   margin-top: 75px;
+  gap: 10px;
   text-align: center;
 `,Wm=je.a`
   cursor: pointer;
@@ -110,7 +110,7 @@ Error generating stack: `+o.message+`
   &:hover {
     scale: 1.05;
   }
-`,Hm="e55d364b",Qm=()=>{const[e,t]=$e.useState(""),[n,r]=$e.useState(),[l,o]=$e.useState(null),i=u=>{t(u.target.value),r("")};return $e.useEffect(()=>{(async()=>{try{const s=`https://www.omdbapi.com/?s=${e}&apikey=${Hm}`,m=await(await fetch(s)).json();o(m)}catch(s){console.error(s)}})()},[e]),B.jsxs(Ym,{children:[B.jsx(Gm,{onChange:u=>i(u),value:e,type:"text",placeholder:"Type Movie Title ..."}),B.jsx(Bm,{selectedMovie:n}),B.jsx(Fm,{movieData:l,setSearchValue:t,setSelectedMovie:r})]})},Ym=je.section`
+`,Hm="e55d364b",Qm=()=>{const[e,t]=$e.useState(""),[n,r]=$e.useState(),[l,o]=$e.useState(null),i=u=>{t(u.target.value),r(void 0)};return $e.useEffect(()=>{(async()=>{try{const s=`https://www.omdbapi.com/?s=${e}&apikey=${Hm}`,m=await(await fetch(s)).json();o(m)}catch(s){console.error(s)}})()},[e]),B.jsxs(Ym,{children:[B.jsx(Gm,{onChange:u=>i(u),value:e,type:"text",placeholder:"Type Movie Title ..."}),B.jsx(Bm,{selectedMovie:n}),B.jsx(Fm,{movieData:l,setSearchValue:t,setSelectedMovie:r})]})},Ym=je.section`
   display: flex;
   flex-direction: column;
   align-items: center;
